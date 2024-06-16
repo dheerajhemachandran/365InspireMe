@@ -15,6 +15,8 @@ caption=f"""
 {content}.
 
     - {author}
+
+#thoughtoftheday #quotes #aesthetic #lifequotes
 """
 
 image = Post()

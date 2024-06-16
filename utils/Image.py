@@ -15,7 +15,7 @@ class Post:
 
         # Define the text and font
         font_size = 30
-        font = ImageFont.truetype("georgia.ttf", font_size)
+        # font = ImageFont.truetype("georgia.ttf", font_size)
 
         # Wrap the text into multiple lines
         max_line_length = 40  # Adjust as needed
@@ -23,7 +23,7 @@ class Post:
 
         # Calculate the bounding box for each line of text
         lines = wrapped_text.split('\n')
-        line_height = draw.textbbox((0, 0), "A", font=font)[3] - draw.textbbox((0, 0), "A", font=font)[1]
+        line_height = draw.textbbox((0, 0), "A",font_size=font_size)[3] - draw.textbbox((0, 0), "A",font_size=font_size)[1]
 
         # Calculate the total height of the text block
         text_block_height = len(lines) * line_height + (len(lines) - 1) * lineHeight
@@ -34,11 +34,11 @@ class Post:
         # Draw each line of the wrapped text
         for i, line in enumerate(lines):
             # Calculate the width of the current line
-            line_width = draw.textbbox((0, 0), line, font=font)[2] - draw.textbbox((0, 0), line, font=font)[0]
+            line_width = draw.textbbox((0, 0), line,font_size=font_size)[2] - draw.textbbox((0, 0), line,font_size=font_size)[0]
             # Calculate the x position to center the line
             start_x = (width - line_width) / 2
             # Draw the line
-            draw.text((start_x, start_y + i * (line_height + lineHeight)), line, fill="black", font=font)
+            draw.text((start_x, start_y + i * (line_height + lineHeight)), line, fill="black",font_size=font_size)
 
         image.save("target_image.png")
 
