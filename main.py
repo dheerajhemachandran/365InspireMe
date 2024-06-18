@@ -6,24 +6,27 @@ import os
 
 load_dotenv()
 
-quotes=Quotes()
-response=quotes.get_quotes()
-content=response['content']
-author=response['author']
-
-caption=f"""
-{content}.
-
-    - {author}
-
-#thoughtoftheday #quotes #aesthetic #lifequotes
-"""
-
-image = Post()
-target=image.createImage(text=content)
-
 username=os.getenv('INSTA_USERNAME')
 password=os.getenv('INSTA_PASSWORD')
 
 instagram=Instagram(username,password)
-instagram.postUpload(target,caption)
+
+i=0
+while (i<3):
+    quotes=Quotes()
+    response=quotes.get_quotes()
+    content=response['content']
+    author=response['author']
+
+    caption=f"""
+    {content}.
+
+        - {author}
+
+    #thoughtoftheday #quotes #aesthetic #lifequotes
+    """
+
+    image = Post()
+    target=image.createImage(text=content)
+    instagram.postUpload(target,caption)
+    i+=1
