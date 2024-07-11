@@ -25,7 +25,7 @@ class Instagram:
     
     def like_and_comment(self,media_id,comment):
         self.client.media_like(media_id)
-        self.client.media_comment(media_id,comment)
+        # self.client.media_comment(media_id,comment)
 
     def follow_user(self,username):
         user_id = self.client.user_id_from_username(username)

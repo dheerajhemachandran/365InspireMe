@@ -30,18 +30,18 @@ target=image.createImage(text=content)
 # instagram.postUpload(target,caption)
 
 # unfollowing users 
-# exclude_usernames=['innerstrenght_','yours_dheeraj.07','sujana.zip']
-# instagram.unfollow_all_user(exclude_usernames)
+exclude_usernames=['innerstrenght_','yours_dheeraj.07','sujana.zip']
+instagram.unfollow_all_user(exclude_usernames)
 
 
 # following new 10 users 
-# for i in instagram.search_posts(hashtag="quotes",count=10):
-#     media_id=(i.pk)
-#     comment='This is amazing! Check out my profile for more content like this! ✨'
-#     instagram.like_and_comment(media_id,comment)
-#     instagram.save_post(media_id)
-#     username=instagram.get_likers(media_id).username
-#     instagram.follow_user(username)
+for i in instagram.search_posts(hashtag="quotes",count=10):
+    media_id=(i.pk)
+    comment='This is amazing! Check out my profile for more content like this! ✨'
+    instagram.like_and_comment(media_id,comment)
+    instagram.save_post(media_id)
+    username=instagram.get_likers(media_id).username
+    instagram.follow_user(username)
 
 # logout
 instagram.logout()
