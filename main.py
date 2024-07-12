@@ -30,7 +30,7 @@ target=image.createImage(text=content)
 instagram.postUpload(target,caption)
 
 # unfollowing users 
-exclude_usernames=['innerstrenght_','yours_dheeraj.07','sujana.zip']
+exclude_usernames=['innerstrenght_','yours_dheeraj.07']
 # instagram.unfollow_all_user(exclude_usernames)
 
 
